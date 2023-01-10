@@ -17,7 +17,7 @@ import { useState, useEffect } from "react";
 
 
 export default function ProcessedData() {
-  const url = "http://127.0.0.1:9001/processdatatable";
+  const url = "https://backend-seven-sigma.vercel.app/processdatatable";
   const [loader, setLoader] = useState(false);
   const [rows, setRows] = useState([]);
   const [open, setOpen] = useState(false);

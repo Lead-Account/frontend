@@ -33,7 +33,7 @@ const UsersTable = () => {
         { title: "Balance", field: 'Balance' },
       ]
       
-      const endpoint = "https://https://backend-cgizic7hi-lead-account.vercel.app/:9001/vendormis";
+      const endpoint = "https://backend-seven-sigma.vercel.app/vendormis";
   const getData = async () => {
     await Axios.get(endpoint).then((response) => {
       const data = response.data;

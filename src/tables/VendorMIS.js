@@ -80,7 +80,7 @@ const VendorMIS = () => {
   const { LoanNo } = useParams();
   const { id } = useParams();
 
-  const endpoint = "http://127.0.0.1:9001/vendormis";
+  const endpoint = "https://backend-seven-sigma.vercel.app/vendormis";
 
   const [currentTutorial, setCurrentTutorial] = useState(initialTutorialState);
 
@@ -115,14 +115,14 @@ const VendorMIS = () => {
   const [process, setProcess] = useState([]);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:9001/vendormis").then((response) => {
+    axios.get("https://backend-seven-sigma.vercel.app/vendormis").then((response) => {
       setProcess(response);
       setLoader(true);
     });
   }, []);
 
   const get = (id) => {
-    return axios.get(`http://127.0.0.1:9001/getonevendor/${id}`);
+    return axios.get(`https://backend-seven-sigma.vercel.app/getonevendor/${id}`);
   };
 
   const getTutorial = (id) => {
@@ -146,7 +146,7 @@ const VendorMIS = () => {
   };
 
   const update = (LoanNo, data) => {
-    return axios.put(`http://127.0.0.1:9001/vendormis/${LoanNo}`, data);
+    return axios.put(`https://backend-seven-sigma.vercel.app/vendormis/${LoanNo}`, data);
   };
 
   const retrieveTutorials = () => {
@@ -175,7 +175,7 @@ const VendorMIS = () => {
   };
 
   const remove = (id) => {
-    return axios.delete(`http://127.0.0.1:9001/vendormis/${id}`);
+    return axios.delete(`https://backend-seven-sigma.vercel.app/vendormis/${id}`);
   };
 
   const deleteTutorial = () => {
@@ -272,7 +272,7 @@ const VendorMIS = () => {
   const [abc, setAbc] = useState([]);
 
   const getprocessdata = (id) => {
-    return axios.get(`http://127.0.0.1:9001/processdata/${id}`);
+    return axios.get(`https://backend-seven-sigma.vercel.app/processdata/${id}`);
   };
 
   const getprocessdatas = (id) => {
@@ -302,7 +302,7 @@ const VendorMIS = () => {
   };
 
   const processedData = () => {
-    axios.get("http://127.0.0.1:9001/processdatas").then((response) => {
+    axios.get("https://backend-seven-sigma.vercel.app/processdatas").then((response) => {
       alert("Data Processed!");
     });
   }
@@ -329,8 +329,8 @@ const VendorMIS = () => {
               {
                 icon: () => (
                   <>
-                    <button className="horizontal-btn">
-                    <GoSettings /> <span style={{ fontSize: "1rem", marginBottom: "12px" }}> Process All Data</span>
+                    <button className="horizontal-btn" disabled>
+                    <GoSettings /> <span style={{ fontSize: "1rem", marginBottom: "12px" }} > Process All Data</span>
                     </button>
                   </>
                 ),
