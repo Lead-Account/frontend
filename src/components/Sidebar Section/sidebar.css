@@ -1,0 +1,12 @@
+.sidebar-outer{
+    width: 20%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(185,225,245,1) 0%, rgba(210,234,246,1) 65%);
+}
+.logo-section{
+    text-align: center;
+}
+.logo-section img{
+    width: 70%;
+    padding-top: 1rem;
+}

@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.right-outer {
+  width: 80%;
+  height: 100vh;
+  background: rgb(230, 230, 230);
+}
+
+.right-outer .MuiPaper-root {
+  height: 97vh;
+}
+
+.MuiIconButton-label {
+  line-height: 1;
+}
+
+.horizontal-btn {
+  border: none;
+  padding: .3rem 1rem;
+  background: #b9e1f5;
+  border-radius: 5px;
+}
+
+.action-roundbtn {
+  border: none !important;
+  background: transparent;
+  line-height: 1;
+}
+
+.MuiIconButton-root {
+  padding: 7px !important;
+}
+
+.switch-outer {
+  position: relative;
+  transition: all .5s ease;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link.active {
+  border-left: 3px solid rgb(45, 45, 156);
+  background: rgb(247, 247, 247);
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.switch-dropdown {
+  list-style: none;
+  text-align: left;
+  padding: .5rem;
+  border: 1px solid #b9e1f5;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #def3fa;
+  transition: all 1s ease-in;
+  position: absolute;
+  background: #fff;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  display: none;
+  z-index: 9999;
+}
+
+.switch-dropdown li {
+  font-size: 1rem;
+  padding: .5rem .3rem;
+}
+
+.switch-dropdown:hover {
+  display: block;
+}
+
+.switch-btn:hover+.switch-dropdown {
+  display: block;
+  z-index: 99999;
+}
+
+.MuiTableCell-root {
+  white-space: nowrap;
+}
+
+.MuiTableHead-root .MuiTableRow-head th {
+  background-color: #def3fa;
+}
+.vendor-table .MuiTableHead-root .MuiTableRow-head th:last-child {
+  position: sticky;
+  right: 0;
+  border-left: 1px solid lightgray;
+}
+.vendor-table .MuiTableBody-root tr td:last-child{
+  position: sticky;
+  right: 0;
+  background-color: #f0fbff;
+  border-left: 1px solid lightgray;
+}
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.card-container.card {
+  max-width: 350px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgb(203, 46, 46);
+}
+
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.popup-head{
+  text-align: center;
+  padding: .5rem 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(185,225,245,1) 0%, rgba(210,234,246,1) 65%);
+  margin-bottom: 1rem;
+  color: rgb(36, 36, 105);
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.close-btn{
+  color: rgb(218, 45, 45) !important;
+  border: 1px solid rgb(218, 45, 45) !important;
+  padding: .5rem 2rem !important;
+  border-radius: 5px !important;
+}
+.save-btn{
+  color: rgb(44, 131, 44) !important;
+  border: 1px solid rgb(44, 131, 44) !important;
+  padding: .5rem 2rem !important;
+  border-radius: 5px !important;
+  margin-right: 1rem !important;
+}
+.delete-btn{
+  color: rgb(46, 46, 193) !important;
+  border: 1px solid rgb(46, 46, 193) !important;
+  padding: .5rem 2rem !important;
+  border-radius: 5px !important;
+  margin-right: 1rem !important;
+}
+.data-modal .MuiBox-root{
+  height: 95vh;
+  overflow-y: scroll;
+}
