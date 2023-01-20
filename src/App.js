@@ -12,11 +12,14 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
+import VendorMisUpload from "./components/upload/VendorMisUpload";
+import BankMisUpload from "./components/upload/BankMisUpload";
 import VendorMIS from "./tables/VendorMIS";
 import BankMIS from "./tables/BankMIS";
 import UsersTable from "./tables/UsersTable";
 import ProcessedData from "./tables/ProcessedData";
 import Sidebar from "./components/Sidebar Section/Sidebar";
+import DuplicateData from "./tables/DuplicateData";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -38,7 +41,7 @@ const App = () => {
   };
 
   return (
-    <div className="d-flex">
+    <div className="d-flex table-outer">
       {/* Navbar Start */}
       {/* <nav className="navbar navbar-expand" style={{ background: "linear-gradient(to bottom left, #33ccff 10%, #33ccff 80%)", height: "71px", boxShadow:"0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)" }}>
         <Link to={"/"} className="navbar-brand" style={{ color: "white", fontWeight: "bolder", fontSize: "30px" }}>
@@ -95,7 +98,7 @@ const App = () => {
       <Sidebar/>
       <div className="container-fluid right-outer p-2 ">
         <Routes>
-          <Route path="/" element={<VendorMIS />} />
+          {/* <Route path="/" element={<VendorMIS />} /> */}
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -107,6 +110,9 @@ const App = () => {
           <Route path="/admin" element={<BoardAdmin />} />
           <Route path="/processdata" element={<ProcessedData />} />
           <Route path="/userdetails" element={<UsersTable />} />
+          <Route path="/" element={<VendorMisUpload/>} />
+          <Route path="/bankmisupload" element={<BankMisUpload />} />
+          <Route path="/duplicatedata" element={<DuplicateData />} />
         </Routes>
       </div>
       {/* Navbar Ends */}

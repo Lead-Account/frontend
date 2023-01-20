@@ -13,6 +13,16 @@ export default function Sidebar() {
           <h4 className='mt-4 pl-3'>Quick Menu</h4>
           <ul>
             <li>
+              <NavLink to={"/"} activeClassName="active" className="nav-link">
+                Upload Vendor MIS{" "}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/bankmisupload"} activeClassName="active" className="nav-link">
+                Upload Bank MIS{" "}
+              </NavLink>
+            </li>
+            <li>
               <NavLink to={"/vendormis"} activeClassName="active" className="nav-link">
                 Vendor MIS{" "}
               </NavLink>
@@ -22,9 +32,19 @@ export default function Sidebar() {
                 Bank MIS
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to={"/processdata"} activeClassName="active" className="nav-link">
                 Processed Data
+              </NavLink>
+            </li> */}
+            {/* <li>
+              <NavLink to={"/userdetails"} activeClassName="active" className="nav-link">
+                Unprocessed Data
+              </NavLink>
+            </li> */}
+            <li>
+              <NavLink to={"/duplicatedata"} className="nav-link">
+                Duplicate Data
               </NavLink>
             </li>
           </ul>

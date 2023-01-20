@@ -16,12 +16,14 @@ import axios from "axios";
 import Loading from "../components/Loading";
 import * as xlsx from "xlsx";
 import { AiOutlineDelete } from "react-icons/ai";
+import { BiDuplicate } from "react-icons/bi";
 import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineDownload } from "react-icons/ai";
 import { GoSettings } from "react-icons/go" 
 import { HiPencilSquare } from "react-icons/hi2";
 import { TbArrowsRightLeft } from "react-icons/tb";
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { FiArrowRight } from "react-icons/fi";
 
 const VendorMIS = () => {
   const [loader, setLoader] = useState(false);
@@ -80,7 +82,7 @@ const VendorMIS = () => {
   const { LoanNo } = useParams();
   const { id } = useParams();
 
-  const endpoint = "https://backend-seven-sigma.vercel.app/vendormis";
+  const endpoint = "http://127.0.0.1:9001/vendormis";
 
   const [currentTutorial, setCurrentTutorial] = useState(initialTutorialState);
 
@@ -115,14 +117,14 @@ const VendorMIS = () => {
   const [process, setProcess] = useState([]);
 
   useEffect(() => {
-    axios.get("https://backend-seven-sigma.vercel.app/vendormis").then((response) => {
+    axios.get("http://127.0.0.1:9001/vendormis").then((response) => {
       setProcess(response);
       setLoader(true);
     });
   }, []);
 
   const get = (id) => {
-    return axios.get(`https://backend-seven-sigma.vercel.app/getonevendor/${id}`);
+    return axios.get(`http://127.0.0.1:9001/getonevendor/${id}`);
   };
 
   const getTutorial = (id) => {
@@ -146,7 +148,7 @@ const VendorMIS = () => {
   };
 
   const update = (LoanNo, data) => {
-    return axios.put(`https://backend-seven-sigma.vercel.app/vendormis/${LoanNo}`, data);
+    return axios.put(`http://127.0.0.1:9001/vendormis/${LoanNo}`, data);
   };
 
   const retrieveTutorials = () => {
@@ -175,13 +177,29 @@ const VendorMIS = () => {
   };
 
   const remove = (id) => {
-    return axios.delete(`https://backend-seven-sigma.vercel.app/vendormis/${id}`);
+    return axios.delete(`http://127.0.0.1:9001/vendormis/${id}`);
   };
 
   const deleteTutorial = () => {
     remove(currentTutorial.id)
       .then((response) => {
         alert("Deleted Succesfully!");
+        // console.log(response);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+
+
+  const duplicateData = (id) => {
+    return axios.get(`http://127.0.0.1:9001/duplicatedata/${id}`);
+  };
+
+  const duplicateDataCall = (id) => {
+    duplicateData(id)
+      .then((response) => {
+        alert("Successfully Added To Duplicate!");
         // console.log(response);
       })
       .catch((e) => {
@@ -272,7 +290,7 @@ const VendorMIS = () => {
   const [abc, setAbc] = useState([]);
 
   const getprocessdata = (id) => {
-    return axios.get(`https://backend-seven-sigma.vercel.app/processdata/${id}`);
+    return axios.get(`http://127.0.0.1:9001/processdata/${id}`);
   };
 
   const getprocessdatas = (id) => {
@@ -302,7 +320,7 @@ const VendorMIS = () => {
   };
 
   const processedData = () => {
-    axios.get("https://backend-seven-sigma.vercel.app/processdatas").then((response) => {
+    axios.get("http://127.0.0.1:9001/processdatas").then((response) => {
       alert("Data Processed!");
     });
   }
@@ -361,6 +379,17 @@ const VendorMIS = () => {
                   handleOpen(rowData);
                 },
               },
+              // {
+              //   icon: () => (
+              //     <button className="action-roundbtn" style={{ color: "#057AC6" }}>
+              //       <FiArrowRight />
+              //     </button>
+              //   ),
+              //   tooltip: "Process Data",
+              //   onClick: (event, rowData) => {
+              //     handleEdit(handleEdit(rowData));
+              //   },
+              // },
               {
                 icon: () => (
                   <span className="switch-outer">
@@ -369,9 +398,10 @@ const VendorMIS = () => {
                     </button>
                   </span>
                 ),
-                tooltip: "Switch",
+                tooltip: "Matched Data With Bank MIS",
                 onClick: (event, rowData) => {
                   handleOpenProcessedData(rowData._id);
+                  console.log(rowData._id);
                   //handleProcessData(rowData._id);
                 },
               },
@@ -395,6 +425,17 @@ const VendorMIS = () => {
                 tooltip: "delete",
                 onClick: (event, rowData) => {
                   handleOpenDeleteModel(rowData._id);
+                },
+              },
+              {
+                icon: () => (
+                  <button className="action-roundbtn" style={{ color: "red" }}>
+                    <BiDuplicate />
+                  </button>
+                ),
+                tooltip: "Add to Duplicate",
+                onClick: (event, rowData) => {
+                  duplicateDataCall(rowData._id);
                 },
               },
             ]}

@@ -28,7 +28,7 @@ export default function ProcessedData() {
       .then((resp) => {
         setRows(resp);
         setLoader(true);
-        console.log(rows);
+        console.log(resp);
       })
       .catch((error) => {
         console.log(error);
@@ -65,7 +65,7 @@ export default function ProcessedData() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rows.map((item) => (
             <>
               <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
                 <TableCell>
@@ -77,28 +77,28 @@ export default function ProcessedData() {
                     {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                   </IconButton>
                 </TableCell>
-                <TableCell>{row.Month}</TableCell>
-                <TableCell>{row.LoanNo}</TableCell>
-                <TableCell>{row.Custname}</TableCell>
-                <TableCell>{row.DisbDate}</TableCell>
-                <TableCell>{row.LoanApplied}</TableCell>
-                <TableCell>{row.LoanAmt}</TableCell>
-                <TableCell>{row.Remark1}</TableCell>
-                <TableCell>{row.DisbCity}</TableCell>
-                <TableCell>{row.ActualDibursalMonth}</TableCell>
-                <TableCell>{row.MatchQfile}</TableCell>
-                <TableCell>{row.Confirmwith}</TableCell>
-                <TableCell>{row.Remark2}</TableCell>
-                <TableCell>{row.BankNBFCName}</TableCell>
-                <TableCell>{row.Product}</TableCell>
-                <TableCell>{row.Rate}</TableCell>
-                <TableCell>{row.Subvention}</TableCell>
-                <TableCell>{row.Addition}</TableCell>
-                <TableCell>{row.Payout}</TableCell>
-                <TableCell>{row.GST}</TableCell>
-                <TableCell>{row.Cr}</TableCell>
-                <TableCell>{row.PaymentMade}</TableCell>
-                <TableCell>{row.Balance}</TableCell>
+                <TableCell>{item.Month}</TableCell>
+                <TableCell>{item.LoanNo}</TableCell>
+                <TableCell>{item.Custname}</TableCell>
+                <TableCell>{item.DisbDate}</TableCell>
+                <TableCell>{item.LoanApplied}</TableCell>
+                <TableCell>{item.LoanAmt}</TableCell>
+                <TableCell>{item.Remark1}</TableCell>
+                <TableCell>{item.DisbCity}</TableCell>
+                <TableCell>{item.ActualDibursalMonth}</TableCell>
+                <TableCell>{item.MatchQfile}</TableCell>
+                <TableCell>{item.Confirmwith}</TableCell>
+                <TableCell>{item.Remark2}</TableCell>
+                <TableCell>{item.BankNBFCName}</TableCell>
+                <TableCell>{item.Product}</TableCell>
+                <TableCell>{item.Rate}</TableCell>
+                <TableCell>{item.Subvention}</TableCell>
+                <TableCell>{item.Addition}</TableCell>
+                <TableCell>{item.Payout}</TableCell>
+                <TableCell>{item.GST}</TableCell>
+                <TableCell>{item.Cr}</TableCell>
+                <TableCell>{item.PaymentMade}</TableCell>
+                <TableCell>{item.Balance}</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell
@@ -151,7 +151,7 @@ export default function ProcessedData() {
                           </TableRow>
                         </TableHead>
                         <TableBody>
-                          {row.bankmis.map((historyRow) => (
+                          {item.bankmis.map((historyRow) => (
                             <TableRow key={historyRow.Id}>
                               <TableCell>
                                 {historyRow.AddiSubvAmt}
