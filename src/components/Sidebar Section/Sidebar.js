@@ -32,11 +32,11 @@ export default function Sidebar() {
                 Bank MIS
               </NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink to={"/processdata"} activeClassName="active" className="nav-link">
                 Processed Data
               </NavLink>
-            </li> */}
+            </li>
             {/* <li>
               <NavLink to={"/userdetails"} activeClassName="active" className="nav-link">
                 Unprocessed Data
