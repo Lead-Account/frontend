@@ -35,7 +35,7 @@ const DuplicateData = () => {
     { title: "Balance", field: "Balance" }
   ];
 
-  const endpoint = "http://127.0.0.1:9001/duplicatedatalist";
+  const endpoint = "https://backend-orpin-eight.vercel.app/duplicatedatalist";
   const getData = async () => {
     await Axios.get(endpoint).then((response) => {
       const data = response.data;

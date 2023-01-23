@@ -49,7 +49,7 @@ const BankMIS = () => {
     { title: "PaidRate", field: "PaidRate" },
   ];
 
-  const endpoint = "http://127.0.0.1:9001/bankmisdata";
+  const endpoint = "https://backend-orpin-eight.vercel.app/bankmisdata";
   const getData = async () => {
     await Axios.get(endpoint).then((response) => {
       const data = response.data;
